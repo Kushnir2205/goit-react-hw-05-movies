@@ -16,26 +16,26 @@ export const getTrending = async () => {
   return data;
 };
 
-export const searchMovies = async () => {
+export const searchMovies = async query => {
   const { data } = await instance(
-    `/3/search/movie?include_adult=false&language=en-US&page=1`
+    `/search/movie?include_adult=false&language=en-US&page=1&query=${query}`
   );
   return data;
 };
 
-export const getMovieDetails = async () => {
-  const { data } = await instance(`movie/movie_id?language=en-US`);
+export const getMovieDetails = async movieId => {
+  const { data } = await instance(`movie/${movieId}?language=en-US`);
   return data;
 };
 
-export const getMovieCredits = async () => {
-  const { data } = await instance(`/movie/movie_id/credits?language=en-US`);
+export const getMovieCredits = async movieId => {
+  const { data } = await instance(`/movie/${movieId}/credits?language=en-US`);
   return data;
 };
 
-export const getReviews = async () => {
+export const getReviews = async movieId => {
   const { data } = await instance(
-    `/movie/movie_id/reviews?language=en-US&page=1`
+    `/movie/${movieId}/reviews?language=en-US&page=1`
   );
   return data;
 };
