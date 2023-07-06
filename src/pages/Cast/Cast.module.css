@@ -1,0 +1,27 @@
+.castContainer {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 20px;
+}
+
+.castItem {
+  width: 200px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.castImage {
+  width: 100%;
+  height: auto;
+}
+
+.castName {
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.castCharacter {
+  color: #888;
+  margin-top: 3px;
+}

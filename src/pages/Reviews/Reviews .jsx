@@ -2,6 +2,8 @@ import { getReviews } from 'api/serviceApi';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
+import css from './Reviews.module.css';
+
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
 
@@ -13,19 +15,19 @@ const Reviews = () => {
   }, [movieId]);
 
   return (
-    <div>
-      <h2>Reviews</h2>
+    <div className={css.reviewsContainer}>
+      <h2 className={css.title}>Reviews</h2>
       {reviews.length > 0 ? (
-        <ul>
+        <ul className={css.list}>
           {reviews.map(review => (
-            <li key={review.id}>
-              <h3>{review.author}</h3>
-              <p>{review.content}</p>
+            <li className={css.reviewItem} key={review.id}>
+              <h3 className={css.author}>{review.author}</h3>
+              <p className={css.content}>{review.content}</p>
             </li>
           ))}
         </ul>
       ) : (
-        <p>No reviews available</p>
+        <p className={css.noReviews}>No reviews available</p>
       )}
     </div>
   );

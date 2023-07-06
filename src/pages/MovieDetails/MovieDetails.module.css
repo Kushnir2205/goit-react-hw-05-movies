@@ -1,0 +1,80 @@
+.container {
+  margin: 20px;
+}
+
+.goBack {
+  background-color: #eee;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
+  transition: background-color 0.3s ease;
+}
+
+.goBack:hover {
+  background-color: #ddd;
+}
+
+.article {
+  display: flex;
+  align-items: center;
+}
+
+.poster {
+  width: 200px;
+  margin-right: 20px;
+}
+
+.details {
+  flex-grow: 1;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.year {
+  margin-left: 20px;
+  font-size: 25px;
+  color: #888;
+}
+
+.genres {
+  margin-top: 10px;
+}
+
+.overviewTitle {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.overview {
+  margin-top: 10px;
+}
+
+.additionalInfo {
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.additionalLinks {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.link {
+  color: #000;
+  font-size: 16px;
+}
+
+.link:hover {
+  font-weight: bold;
+  color: blue;
+}
