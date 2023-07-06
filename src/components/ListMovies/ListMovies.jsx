@@ -31,5 +31,5 @@ ListMovies.propTypes = {
       name: PropTypes.string,
     })
   ).isRequired,
-  location: PropTypes.object.isRequired,
+  location: PropTypes.object,
 };
