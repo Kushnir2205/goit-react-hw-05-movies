@@ -24,7 +24,7 @@ const Cast = () => {
                 src={
                   actor.profile_path
                     ? `https://image.tmdb.org/t/p/w300/${actor.profile_path}`
-                    : require('person_found.jpeg')
+                    : require('../../images/person_found.jpeg')
                 }
                 alt={actor.name}
               />

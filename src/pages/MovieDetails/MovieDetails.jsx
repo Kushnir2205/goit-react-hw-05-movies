@@ -39,7 +39,7 @@ const MovieDetails = () => {
               src={
                 poster_path
                   ? `https://image.tmdb.org/t/p/w500/${poster_path}`
-                  : require('person_found.jpeg')
+                  : require('../../images/image_not_found.png')
               }
               alt={name}
             />
