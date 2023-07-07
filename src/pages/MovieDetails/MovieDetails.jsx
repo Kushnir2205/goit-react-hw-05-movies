@@ -6,15 +6,7 @@ import PropTypes from 'prop-types';
 import css from './MovieDetails.module.css';
 
 const MovieDetails = () => {
-  const [details, setDetails] = useState({});
-  const {
-    poster_path = '',
-    original_title = '',
-    name = '',
-    release_date = '',
-    genres = [],
-    overview = '',
-  } = details;
+  const [details, setDetails] = useState(null);
 
   const location = useLocation();
   const comeBack = useRef(location.state?.from || '/');
@@ -23,7 +15,15 @@ const MovieDetails = () => {
   useEffect(() => {
     getMovieDetails(movieId).then(setDetails);
   }, [movieId]);
-
+  if (!details) return;
+  const {
+    poster_path = '',
+    original_title = '',
+    name = '',
+    release_date = '',
+    genres = [],
+    overview = '',
+  } = details;
   return (
     <>
       <div className={css.container}>
@@ -36,7 +36,11 @@ const MovieDetails = () => {
           {poster_path && (
             <img
               className={css.poster}
-              src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+              src={
+                poster_path
+                  ? `https://image.tmdb.org/t/p/w500/${poster_path}`
+                  : require('person_found.jpeg')
+              }
               alt={name}
             />
           )}

@@ -15,23 +15,27 @@ const Cast = () => {
   return (
     <div>
       <h2>Cast</h2>
-      <ul className={css.castContainer}>
-        {cast.map(actor => (
-          <li key={actor.id} className={css.castItem}>
-            <img
-              className={css.castImage}
-              src={
-                actor.profile_path
-                  ? `https://image.tmdb.org/t/p/w300/${actor.profile_path}`
-                  : require('person_found.jpeg')
-              }
-              alt={actor.name}
-            />
-            <p className={css.castName}>{actor.name}</p>
-            <p className={css.castCharacter}>Character: {actor.character}</p>
-          </li>
-        ))}
-      </ul>
+      {cast.length > 0 ? (
+        <ul className={css.castContainer}>
+          {cast.map(actor => (
+            <li key={actor.id} className={css.castItem}>
+              <img
+                className={css.castImage}
+                src={
+                  actor.profile_path
+                    ? `https://image.tmdb.org/t/p/w300/${actor.profile_path}`
+                    : require('person_found.jpeg')
+                }
+                alt={actor.name}
+              />
+              <p className={css.castName}>{actor.name}</p>
+              <p className={css.castCharacter}>Character: {actor.character}</p>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p>No reviews available</p>
+      )}
     </div>
   );
 };

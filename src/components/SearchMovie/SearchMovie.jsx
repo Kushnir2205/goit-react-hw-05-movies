@@ -10,12 +10,13 @@ const SearchMovie = ({ onSearch }) => {
     setQuery(event.target.value);
   };
 
-  const handleSearch = () => {
+  const handleSearch = event => {
+    event.preventDefault();
     onSearch(query);
   };
 
   return (
-    <div className={css.container}>
+    <form className={css.container} onSubmit={handleSearch}>
       <input
         type="text"
         value={query}
@@ -23,10 +24,10 @@ const SearchMovie = ({ onSearch }) => {
         placeholder="Search movies"
         className={css.input}
       />
-      <button className={css.button} type="submit" onClick={handleSearch}>
+      <button className={css.button} type="button" onClick={handleSearch}>
         Search
       </button>
-    </div>
+    </form>
   );
 };
 

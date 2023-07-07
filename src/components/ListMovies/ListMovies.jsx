@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import css from './ListMovies.module.css';
 
-const ListMovies = ({ movies, location }) => {
+const ListMovies = ({ movies }) => {
+  const location = useLocation();
   return (
     <ul className={css.list}>
       {movies.map(movie => (
@@ -31,5 +32,4 @@ ListMovies.propTypes = {
       name: PropTypes.string,
     })
   ).isRequired,
-  location: PropTypes.object,
 };
